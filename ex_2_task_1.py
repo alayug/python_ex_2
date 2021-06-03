@@ -60,6 +60,19 @@ def is_valid_email_address(s):
     if C not in ["com", "edu", "gov", "org"]:
         print (C + " is not valid, it must be com, edu, gov, or org")
 
+    # alphanumeric check for A
+    if A.isalnum() = False:
+        print (A + "must only be alphanumeric")
+
+    # alphanumeric check for B
+    if B.isalnum() = False:
+        print (B + "must only be alphanumeric")
+
+    # check to ensure there is only one period
+
+
+    # check to ensure there is only one @ 
+
 
 
 
