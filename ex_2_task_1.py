@@ -66,7 +66,7 @@ def is_valid_email_address(s):
         return 5, B + " is invalid, anything after @  and before the . must be between 2 to 8 characters"
     # check to make sure C is one of the following com edu gov org
     if C not in ["com", "edu", "gov", "org"]:
-        return 7, C + " is invalid, it must be com, edu, gov, or org"
+        return 7, C + " is invalid, anything after . must be com, edu, gov, or org"
 
     # alphanumeric check for A
     if A.isalnum() == False:

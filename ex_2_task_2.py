@@ -30,16 +30,30 @@
 
 # import your function from the previous .py file as a module (you can abbreviate it)
 # use ex_2_task_2 here instead once your function works!
-from ex_2_task_1_solution import is_valid_email_address as is_valid 
+from ex_2_task_1 import is_valid_email_address as is_valid 
 
 gave_up = False
 attempts_left = 3
 
 # your code - start
+while gave_up == False:
 
+    inputEmail = input("Enter your email address: ")
 
-# your code - end
-if not gave_up:
-    print("valid email", email)
-else:
-    print("invalid email", email)
+    errorCode, errorMessage = is_valid(inputEmail)
+
+    if(errorCode == None):
+        print("Valid Email Address!")
+        break
+    else:
+        print(inputEmail + " is an invalid email address.")
+        print("Reason: " + errorMessage)
+        attempts_left -=1
+        print("Number of attempts left: " + str(attempts_left))
+    
+    
+    if attempts_left == 0: 
+        gave_up = True
+        print("Bailing out due to too many incorrect attempts.")
+
+    # your code - end

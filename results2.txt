@@ -1,0 +1,16 @@
+Enter your email address: test 
+test is an invalid email address.
+Reason: test must include and should have only one @
+Number of attempts left: 2
+Enter your email address: test@test
+test@test is an invalid email address.
+Reason: test anything after @ must include and should have only one period
+Number of attempts left: 1
+Enter your email address: test@test.co
+test@test.co is an invalid email address.
+Reason: co is invalid, anything after . must be com, edu, gov, or org
+Number of attempts left: 0
+Bailing out due to too many incorrect attempts.
+PS C:\git\python_ex_2> & C:/Users/alayug/AppData/Local/Programs/Python/Python39/python.exe c:/git/python_ex_2/ex_2_task_2.py
+Enter your email address: test@test.com
+Valid Email Address!
