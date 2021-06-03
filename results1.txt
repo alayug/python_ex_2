@@ -1,0 +1,11 @@
+charding@iastate.edu this is a legit email
+chris.edu - error: chris.edu must include and should have only one @, error code: 1
+chris@edu - error: edu anything after @ must include and should have only one period, error code: 4
+@bla.edu - error:  is invalid, anything before @ must be between 3 to 16 characters, error code: 2
+throatwobblermangrove@mpfc.org - error: throatwobblermangrove is invalid, anything before @ must be between 3 to 16 characters, error code: 2
+chris@X.com - error: X is invalid, anything after @  and before the . must be between 2 to 8 characters, error code: 5
+chris.harding@iastate.edu - error: chris.harding must only be alphanumeric, error code: 3
+chris@pymart.biz - error: biz is invalid, it must be com, edu, gov, or org, error code: 7
+chris@letsgo!.org - error: letsgo! anything after @ and before . must only be alphanumeric, error code: 6
+chris@megasavings.org - error: megasavings is invalid, anything after @  and before the . must be between 2 to 8 characters, error code: 5
+tc@tank.com - error: tc is invalid, anything before @ must be between 3 to 16 characters, error code: 2
