@@ -13,17 +13,17 @@
 #
 # Here are some tests and the expected results:
 # 
-# charding@iastate.edu (None, 'Seems legit')
-# chris.edu (1, 'Must have exactly one @!')
-# chris@edu (4, 'post @ part must have exactly one dot!')
-# @bla.edu (2, 'pre @ part must contain 3 - 16 alfanum chars')
-# throatwobblermangrove@mpfc.org (2, 'pre @ part must contain 3 - 16 alfanum chars')
-# chris@X.com (5, 'part after @ and before . must contain 2 - 8 alfanum chars')
-# chris.harding@iastate.edu (3, 'pre @ part must only contain alfanum chars')
-# chris@pymart.biz (7, 'past-dot part invalid, must be from: com, edu, org, gov')
-# chris@letsgo!.org (6, 'part after @ and before . must only contain alfanum chars')
-# chris@megasavings.org (5, 'part after @ and before . must contain 2 - 8 alfanum chars')
-# tc@tank.com (2, 'pre @ part must contain 3 - 16 alfanum chars')
+# charding@iastate.edu (None, 'Seems legit') -- 
+# chris.edu (1, 'Must have exactly one @!') -- 
+# chris@edu (4, 'post @ part must have exactly one dot!') -- 
+# @bla.edu (2, 'pre @ part must contain 3 - 16 alfanum chars') --
+# throatwobblermangrove@mpfc.org (2, 'pre @ part must contain 3 - 16 alfanum chars') --
+# chris@X.com (5, 'part after @ and before . must contain 2 - 8 alfanum chars') --
+# chris.harding@iastate.edu (3, 'pre @ part must only contain alfanum chars') --
+# chris@pymart.biz (7, 'past-dot part invalid, must be from: com, edu, org, gov') -- 
+# chris@letsgo!.org (6, 'part after @ and before . must only contain alfanum chars') --
+# chris@megasavings.org (5, 'part after @ and before . must contain 2 - 8 alfanum chars') --
+# tc@tank.com (2, 'pre @ part must contain 3 - 16 alfanum chars')--
 #
 # your function MUST react the same (OK or error) but you don't have to use my exact error messages or codes 
 # just something similar to that effect. You could even be more helpful e.g. 
@@ -52,39 +52,35 @@ def is_valid_email_address(s):
 
     # check to make sure A is between 3 to 16 characters
     if len(A) < 3 or len(A) > 16:
-        print (A + " is too long, anything before @ must be between 3 to 16 characters")
+        return 2, A + " is too long, anything before @ must be between 3 to 16 characters"
     # check to make sure B is between 2 to 8 characters
     if len(B) < 2 or len(B) > 8:        
-        print (B + " is too long, anything after @  and before the . must be between 2 to 8 characters")
+        return 5, B + " is too long, anything after @  and before the . must be between 2 to 8 characters"
     # check to make sure C is one of the following com edu gov org
     if C not in ["com", "edu", "gov", "org"]:
-        print (C + " is not valid, it must be com, edu, gov, or org")
+        return 7, C + " is not valid, it must be com, edu, gov, or org"
 
     # alphanumeric check for A
     if A.isalnum() = False:
-        print (A + "must only be alphanumeric")
+        return 3, A + "must only be alphanumeric"
 
     # alphanumeric check for B
     if B.isalnum() = False:
-        print (B + "must only be alphanumeric")
+        return 6, B + "must only be alphanumeric"
 
     # check to ensure there is only one period for valueAfterAt
     if valueAfterAt.count(".") != 1:
-        print (valueAfterAt + " must include and should have only one period")
+        return 4, valueAfterAt + " must include and should have only one period"
 
 
     # check to ensure there is only one @ 
     if s.count("@") != 1 :
-        print (s + " must include and should have only one @")
+        return 1, s + " must include and should have only one @"
 
+    # return None, is legit if all checks have passed
 
+    return "None, this is a legit email"
 
-
-
-    
-
-
-    
 
 # This if ensures that the following is NOT run if this file was imported as a module (which we'll do next!)
 if __name__ == "__main__":
