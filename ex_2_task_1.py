@@ -68,10 +68,15 @@ def is_valid_email_address(s):
     if B.isalnum() = False:
         print (B + "must only be alphanumeric")
 
-    # check to ensure there is only one period
+    # check to ensure there is only one period for valueAfterAt
+    if valueAfterAt.count(".") != 1:
+        print (valueAfterAt + " must include and should have only one period")
 
 
     # check to ensure there is only one @ 
+    if s.count("@") != 1 :
+        print (s + " must include and should have only one @")
+
 
 
 
