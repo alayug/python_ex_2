@@ -36,7 +36,32 @@
 
 def is_valid_email_address(s):
     
-    # your code here
+    # split at the @ and assign them to constants
+    splitEmail = s.split("@")
+    # value for A
+    A = splitEmail[0]
+    # value for B + C
+    valueAfterAt = splitEmail[1]
+
+    # split valueAfterAt at the . to check for B and C
+    splitValueAfterAt = valueAfterAt.split(".")
+    # value for B
+    B = splitValueAfterAt[0]
+    # value for C
+    C = splitValueAfterAt[1]
+
+    # check to make sure A is between 3 to 16 characters
+    if len(A) < 3 or len(A) > 16:
+        print (A + " is too long, anything before @ must be between 3 to 16 characters")
+    # check to make sure B is between 2 to 8 characters
+    if len(B) < 2 or len(B) > 8:        
+        print (B + " is too long, anything after @  and before the . must be between 2 to 8 characters")
+    # check to make sure C is one of the following com edu gov org
+    if C not in ["com", "edu", "gov", "org"]:
+        print (C + " is not valid, it must be com, edu, gov, or org")
+
+
+
 
     
 
