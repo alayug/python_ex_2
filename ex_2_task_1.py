@@ -35,13 +35,21 @@
 # results1.txt
 
 def is_valid_email_address(s):
+    # check to ensure there is only one @ 
+    if s.count("@") != 1 :
+        return 1, s + " must include and should have only one @"
     
     # split at the @ and assign them to constants
     splitEmail = s.split("@")
+    
     # value for A
     A = splitEmail[0]
     # value for B + C
     valueAfterAt = splitEmail[1]
+
+    # check to ensure there is only one period for valueAfterAt
+    if valueAfterAt.count(".") != 1:
+        return 4, valueAfterAt + " anything after @ must include and should have only one period"
 
     # split valueAfterAt at the . to check for B and C
     splitValueAfterAt = valueAfterAt.split(".")
@@ -52,34 +60,25 @@ def is_valid_email_address(s):
 
     # check to make sure A is between 3 to 16 characters
     if len(A) < 3 or len(A) > 16:
-        return 2, A + " is too long, anything before @ must be between 3 to 16 characters"
+        return 2, A + " is invalid, anything before @ must be between 3 to 16 characters"
     # check to make sure B is between 2 to 8 characters
     if len(B) < 2 or len(B) > 8:        
-        return 5, B + " is too long, anything after @  and before the . must be between 2 to 8 characters"
+        return 5, B + " is invalid, anything after @  and before the . must be between 2 to 8 characters"
     # check to make sure C is one of the following com edu gov org
     if C not in ["com", "edu", "gov", "org"]:
-        return 7, C + " is not valid, it must be com, edu, gov, or org"
+        return 7, C + " is invalid, it must be com, edu, gov, or org"
 
     # alphanumeric check for A
-    if A.isalnum() = False:
-        return 3, A + "must only be alphanumeric"
+    if A.isalnum() == False:
+        return 3, A + " must only be alphanumeric"
 
     # alphanumeric check for B
-    if B.isalnum() = False:
-        return 6, B + "must only be alphanumeric"
-
-    # check to ensure there is only one period for valueAfterAt
-    if valueAfterAt.count(".") != 1:
-        return 4, valueAfterAt + " must include and should have only one period"
-
-
-    # check to ensure there is only one @ 
-    if s.count("@") != 1 :
-        return 1, s + " must include and should have only one @"
+    if B.isalnum() == False:
+        return 6, B + " anything after @ and before . must only be alphanumeric"
 
     # return None, is legit if all checks have passed
 
-    return "None, this is a legit email"
+    return None, "this is a legit email"
 
 
 # This if ensures that the following is NOT run if this file was imported as a module (which we'll do next!)
